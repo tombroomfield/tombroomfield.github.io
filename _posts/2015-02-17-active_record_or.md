@@ -8,18 +8,18 @@ ActiveRecord is, in my opinion, the best implementation of an ORM I have ever ha
 Often, this can be a code smell and can be good opportunity to review the structure of my data model. However, all too often more complex queries are necessary.
 
 {% highlight ruby linenos %}
-User.where('first_name = ? OR first_name = ?', 'Tom', 'Rachel')
+  User.where('first_name = ? OR first_name = ?', 'Tom', 'Rachel')
 {% endhighlight %}
 
 I find this quite jarring to be honest. When well written, Ruby is renowned for it's readability and usually Rails reflects this. On the other hand, SQL, is and does not.
 
 This can usually be wrapped in a scope to pretty things up a bit.
 
-``` ruby
+{% highlight ruby linenos %}
 class User
   scope :could_be_a_broomfield -> { User.where('first_name = ? OR first_name = ?', 'Tom', 'Rachel') }
 end
-```
+{% endhighlight %}
 
 This works, but it is unfortunate to see the model filled with scopes that may only be used once or twice, there are ways to deal with this as well, but I find it far from ideal. Queries should show intent.
 
@@ -31,18 +31,18 @@ So, how does it work?
 
 Well, when used simple it reads very nicely, our earlier query could be adapted with the following:
 
-``` ruby
+{% highlight ruby linenos %}
 User.where(first_name: 'Tom').or(User.where(first_name: 'Rachel'))
 # 'Tom' || 'Rachel'
-```
+{% endhighlight %}
 
 It is important at this stage, to remember that the default #where query, when chained, acts as an AND.
 
 So what happens when we do this?
 
-``` ruby
+{% highlight ruby linenos %}
 User.where(country: 'Australia').where(first_name: 'Tom').or(User.where(first_name: 'Rachel'))
-```
+{% endhighlight %}
 
 Would it:
 
@@ -52,9 +52,9 @@ B) Give me All users who live and Australia and are called Tom, or are called Ra
 
 The answer is A, which could be a source of confusion, in order to get all users in Australia, who are either called Tom or Rachel, we would have to do the following:
 
-``` ruby
+{% highlight ruby linenos %}
 User.where(country: 'Australia').or(User.where(first_name: 'Tom')).where(first_name: 'Rachel')
-```
+{% endhighlight %}
 
 It might take awhile to wrap your head around this method. It feels slightly clunky to me passing entire model query in to the #or method instead of an attribute hash. Long chains of #where and #or methods are going to be confusing and unreadable, so remember to keep using your scopes when you need them.
 
