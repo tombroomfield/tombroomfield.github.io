@@ -1,9 +1,7 @@
 ---
 layout: post
-title: Ruby and related!
+title: The upcoming ActiveRecord or method will clean up your queries.
 ---
-
-##The upcoming ActiveRecord #or method will clean up your queries.
 
 ActiveRecord is, in my opinion, the best implementation of an ORM I have ever had the pleasure to work with. However, all to often I find myself having to drop into Arel or straight up SQL in order to get what I need.
 
