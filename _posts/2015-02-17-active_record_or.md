@@ -21,15 +21,15 @@ class User
 end
 {% endhighlight %}
 
-This works, but it is unfortunate to see the model filled with scopes that may only be used once or twice, there are ways to deal with this as well, but I find it far from ideal. Queries should show intent.
+This works, but it is unfortunate to see a model filled with scopes that may only be used once or twice. There are ways to deal with this as well, but I find it far from ideal. Queries should show intent.
 
-ActiveRecord took a nice step forward with the introduction of the #not method in Rails 4. And they have continued in that direction with the recently approved #or method. Multiple pull requests have been opened and closed in recent history attempting to get this functionality in. [Here](https://github.com/rails/rails/pull/18706) and [here](https://github.com/rails/rails/pull/10891) for example. However, too confusion existed in the proposed implementations, especially around where the 'or' actually takes place in the method chain.
+ActiveRecord took a nice step forward with the introduction of the #not method in Rails 4. And they have continued in that direction with the recently approved #or method. Multiple pull requests have been opened and closed in recent history attempting to get this functionality incorporated in to Rails. [Here](https://github.com/rails/rails/pull/18706) and [here](https://github.com/rails/rails/pull/10891) for example. However, confusion existed in the proposed implementations, especially around where the 'or' actually takes place in the method chain.
 
-Recently though, [a much stricter implementation was recently proposed](https://github.com/rails/rails/pull/16052), and with the blessing of DHH himself, has been approved.
+Recently, [a much stricter implementation was proposed](https://github.com/rails/rails/pull/16052), and with the blessing of DHH himself, has been approved.
 
 So, how does it work?
 
-Well, when used simple it reads very nicely, our earlier query could be adapted with the following:
+Well, when used simply it reads nicely, our earlier query could be adapted with the following:
 
 {% highlight ruby linenos %}
 User.where(first_name: 'Tom').or(User.where(first_name: 'Rachel'))
