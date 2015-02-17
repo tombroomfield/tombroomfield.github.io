@@ -7,9 +7,9 @@ ActiveRecord is, in my opinion, the best implementation of an ORM I have ever ha
 
 Often, this can be a code smell and can be good opportunity to review the structure of my data model. However, all too often more complex queries are necessary.
 
-``` ruby
+{% highlight ruby linenos %}
 User.where('first_name = ? OR first_name = ?', 'Tom', 'Rachel')
-```
+{% endhighlight %}
 
 I find this quite jarring to be honest. When well written, Ruby is renowned for it's readability and usually Rails reflects this. On the other hand, SQL, is and does not.
 
