@@ -3,7 +3,7 @@ layout: post
 title: The upcoming ActiveRecord or method will clean up your queries.
 ---
 
-ActiveRecord is, in my opinion, the best implementation of an ORM I have ever had the pleasure to work with. However, all to often I find myself having to drop into Arel or straight up SQL in order to get what I need.
+ActiveRecord is, in my opinion, the best implementation of an ORM I have ever worked with. However, often I find myself having to drop into Arel or straight up SQL in order to get what I need.
 
 Often, this can be a code smell and can be good opportunity to review the structure of my data model. However, all too often more complex queries are necessary.
 
