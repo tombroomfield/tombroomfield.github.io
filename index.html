@@ -4,15 +4,22 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
-    <article class="post">    
-      
+    <article class="post">
+
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       <div class="entry">
         {{ post.content | truncatewords:40}}
       </div>
-      
+
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
 </div>
+
+<!--
+Ideas
+  * Sandi Metz (probably) doesn't hate you.
+  * Rails Bangs - Conecpts that you should use with extreme caution,
+    Active record callbacks, default scopes, ect.
+-->
