@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sandi Metz doesn't hate you - Part 1 100 Lines of disorganization and disrepute to delegation and delightful code.
+title: Sandi Metz doesn't hate you - Part 1 - 100 Lines of disorganization and disrepute to delegation and delightful code.
 ---
 
 The point of this post: Each of Sandi Metz's rules has a specific lesson to teach. Today we look at classes with more than 100 lines of code.
