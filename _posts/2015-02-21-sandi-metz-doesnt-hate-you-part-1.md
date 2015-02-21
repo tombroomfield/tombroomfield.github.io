@@ -29,7 +29,7 @@ In a rails project, I generally find that my models threaten to violate this rul
 
 Imagine we have a monolithic user class with 3 methods that all deal with Authentication. I am aware that there are a lots of gems that can provide this functionality, this is simply for the sake of example.
 
-``` ruby
+{% highlight ruby linenos %}
 class User < ActiveRecord::Base
   # ... 100 lines of mess.
 
@@ -45,13 +45,13 @@ class User < ActiveRecord::Base
     roles.include?(:moderator)
   end
 end
-```
+{% endhighlight %}
 
 All of these methods are very similar and should be abstracted appropriately.
 
 Lets start by creating a PORO.
 
-``` ruby
+{% highlight ruby linenos %}
 class AuthManager
   attr_accessor :user
 
@@ -65,37 +65,37 @@ class AuthManager
 
   # ... author? and moderator? methods.
 end
-```
+{% endhighlight %}
 
 Great, now lets create a reference to our AuthManager from the user class.
 
-``` ruby
+{% highlight ruby linenos %}
 class User
   # ... 100 lines of mess
   def auth_manager
     @auth_manager ||= AuthManager.new(self)
   end
 end
-```
+{% endhighlight %}
 
 And delegate our three methods to this our auth manager.
 
-``` ruby
+{% highlight ruby linenos %}
 class User
   delegate :admin?, :author?, :moderator?, to: :auth_manager
 
   # ... now slightly less mess.
 end
 
-```
+{% endhighlight %}
 
 It is all pretty straightforward.
 
 With this delegation in place, our user object still responds to the admin?, author? and moderator? methods, keeping the user api exactly the same.
 
-``` ruby
+{% highlight ruby linenos %}
 User.new.admin? # => false
-```
+{% endhighlight %}
 
 If you are not using Rails, a similar trick can be used by including the [Forwardable Module](http://ruby-doc.org//stdlib-2.0/libdoc/forwardable/rdoc/Forwardable.html) which is included in the Standard Library.
 
