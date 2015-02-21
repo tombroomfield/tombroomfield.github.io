@@ -58,3 +58,6 @@ User.where(country: 'Australia').or(User.where(first_name: 'Tom')).where(middle_
 It might take awhile to wrap your head around this method. It feels slightly clunky to me passing entire model query in to the #or method instead of an attribute hash. Long chains of #where and #or methods are going to be confusing and unreadable, so remember to keep using your scopes when you need them.
 
 With all that said, I think this will be a welcome addition to the powerful tool belt that is ActiveRecord. I am very excited for the next Rails release so I can have a play. And in the end, any day you get to remove raw SQL from your Rails app is a day worth waking up for.
+
+##Other Posts by Tom Broomfield.
+[Sandi Metz doesn't hate you - Part 1 - 100 Lines of disorganization and disrepute to delegation and delightful code.](http://tombroomfield.com/sandi-metz-doesnt-hate-you-part-1/)
