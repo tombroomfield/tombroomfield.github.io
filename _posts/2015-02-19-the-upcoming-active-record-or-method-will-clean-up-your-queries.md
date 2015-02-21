@@ -8,7 +8,7 @@ ActiveRecord is, in my opinion, the best implementation of an ORM I have ever wo
 Often, this can be a code smell and can be good opportunity to review the structure of my data model. However, all too often more complex queries are necessary.
 
 {% highlight ruby linenos %}
-  User.where('first_name = ? OR first_name = ?', 'Tom', 'Rachel')
+  User.where('first_name = ? OR middle_name = ?', 'Tom', 'Philip')
 {% endhighlight %}
 
 I find this quite jarring to be honest. When well written, Ruby is renowned for it's readability and usually Rails reflects this. On the other hand, SQL, is and does not.
@@ -17,7 +17,7 @@ This can usually be wrapped in a scope to pretty things up a bit.
 
 {% highlight ruby linenos %}
 class User
-  scope :could_be_a_broomfield -> { User.where('first_name = ? OR first_name = ?', 'Tom', 'Rachel') }
+  scope :could_be_tom -> { User.where('first_name = ? OR middle_name = ?', 'Tom', 'Philip') }
 end
 {% endhighlight %}
 
@@ -32,8 +32,7 @@ So, how does it work?
 Well, when used simply it reads nicely, our earlier query could be adapted with the following:
 
 {% highlight ruby linenos %}
-User.where(first_name: 'Tom').or(User.where(first_name: 'Rachel'))
-# 'Tom' || 'Rachel'
+User.where(first_name: 'Tom').or(User.where(middle_name: 'Philip'))
 {% endhighlight %}
 
 It is important at this stage, to remember that the default #where query, when chained, acts as an AND.
@@ -41,19 +40,19 @@ It is important at this stage, to remember that the default #where query, when c
 So what happens when we do this?
 
 {% highlight ruby linenos %}
-User.where(country: 'Australia').where(first_name: 'Tom').or(User.where(first_name: 'Rachel'))
+User.where(country: 'Australia').where(first_name: 'Tom').or(User.where(middle_name: 'Philip'))
 {% endhighlight %}
 
 Would it:
 
-A) Give me all Users who live in Australia, who either have the name Tom or Rachel.
+A) Give me all Users who live in Australia, who either have the first name Tom or the middle name Philip.
 
-B) Give me All users who live and Australia and are called Tom, or are called Rachel(And could be from any country).
+B) Give me All users who live and Australia and have the first name Tom, or are have a middle name Philip(And could be from any country).
 
-The answer is A, which could be a source of confusion, in order to get all users in Australia, who are either called Tom or Rachel, we would have to do the following:
+The answer is A, which could be a source of confusion, in order to get all users in Australia, who either have the first_name Tom or middle_name Philip, we would have to do the following:
 
 {% highlight ruby linenos %}
-User.where(country: 'Australia').or(User.where(first_name: 'Tom')).where(first_name: 'Rachel')
+User.where(country: 'Australia').or(User.where(first_name: 'Tom')).where(middle_name: 'Philip')
 {% endhighlight %}
 
 It might take awhile to wrap your head around this method. It feels slightly clunky to me passing entire model query in to the #or method instead of an attribute hash. Long chains of #where and #or methods are going to be confusing and unreadable, so remember to keep using your scopes when you need them.
