@@ -21,7 +21,7 @@ Each 'Rule' was a cleverly disguised lesson, designed to teach an important OOP 
 
 #####1) Your Class can be no longer than 100 lines of code.
 
-The Lesson: Your class is doing too much, don't be afraid to implement other objects in order to maintain the 'Single Responsibility Principle'.
+The Lesson: Your class is doing too much, don't be afraid to implement other objects in order to maintain the Single Responsibility Principle.
 
 For whatever reason, new Rails developers have the impression that every class they create must either be a Model or a Controller. This is the not the case. It is perfectly acceptable and encouraged to create a PORO(Plain old ruby object) in order to abstract and organize similar logic. There are a few great tools and techniques to help in this process.
 
