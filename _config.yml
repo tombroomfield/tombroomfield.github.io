@@ -18,15 +18,15 @@ avatar: https://avatars0.githubusercontent.com/u/5423793?v=3&s=96
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
+  twitter: tom_broomfield
   email: tomplbroomfield@gmail.com
   facebook:
   flickr:
   github: tombroomfield
   instagram:
-  linkedin: 271978401
+  linkedin:
   pinterest:
   rss: RSS
-  twitter: tom_broomfield
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
