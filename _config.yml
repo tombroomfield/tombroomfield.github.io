@@ -25,7 +25,7 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  rss: RSS
   twitter: tom_broomfield
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
@@ -37,7 +37,7 @@ google_analytics: UA-42651550-4
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: http://www.tombroomfield.com
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
