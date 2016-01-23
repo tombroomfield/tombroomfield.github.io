@@ -11,7 +11,7 @@ Class: [Object](http://ruby-doc.org/core-2.3.0/Object.html#method-i-tap).
 Version: ruby > 1.9
 
 ### What does it do?
-Ruby describes `#taps` behavior as "Yields self to the block, and then returns self". Put simply, it lets you act on an object while ensuring the object is also returned.
+Ruby describes `#tap`'s behavior as "Yields self to the block, and then returns self". Put simply, it lets you act on an object while ensuring the object is also returned.
 
 Example:
 {% highlight ruby linenos %}
