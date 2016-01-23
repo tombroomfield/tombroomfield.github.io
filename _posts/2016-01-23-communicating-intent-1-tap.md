@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Showing Intent: #1 - Ruby's Tap."
+title: "Communicating Intent: #1 - Ruby's Tap."
 ---
-As software projects grow, being able to demonstrate your intent to other developers through clear and reasonable code is paramount. In this series I cover short tips to do just that.
+As software projects grow, being able to demonstrate your intention to other developers through clear and reasonable code is paramount. In this series I cover short tips to do just that.
 
 Today we cover the under appreciated #tap method:
 
