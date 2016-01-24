@@ -35,7 +35,7 @@ end
 
 Why should we ever use `#tap` then?
 
-> Tap **should** be used to make the return value of a method explicitly clear.
+> Tap **should** be used to indicate that the 'subject' of the method is also the return value.
 
 For example, with the above `#make_car` method, imagine if the `#move_to_showroom!` method returned an instance of the car. This would mean the `#make_car` method also returns the newly created car. This is far from explicit in the code, a team member could quite easily add more lines to the `#make_car` method, changing the return value and breaking various parts of your application that have come to rely on `#make_car`.
 
@@ -51,3 +51,13 @@ end
 {% endhighlight %}
 
 Protecting your methods from accidental future sabotage can take many forms, but `#tap` can be a handy tool for your kit.
+
+---
+Edits:
+
+Why not just use the explicit `return` keyword in this case? I generally think explicit returns should only be used in conditionals, such as:
+{% highlight ruby linenos %}
+return car if moved_to_showroom?
+false
+{% endhighlight %}
+Further, I think the `tap` method works better to indicate that the subject (in this case, the `Car`), is the value being returned.
