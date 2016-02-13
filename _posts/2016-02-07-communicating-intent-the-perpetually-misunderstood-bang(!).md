@@ -5,7 +5,7 @@ title: "Communicating Intent: #2 - The perpetually misunderstood bang(!)"
 
 As software projects grow, being able to demonstrate your intention to other developers through clear and reasonable code is paramount. In this series I cover short tips to do just that.
 
-Today we cover the bang(!) symbol. In my opinion is one of the most common, yet misunderstood tactic for communicating intent to other developers. When used correctly, it can avoid a lot of potential issues often encountered in large projects.
+Today we cover the bang(!) symbol. In my opinion is one of the most common, yet misunderstood tactics for communicating intent to other developers. While subtle, it can actually be pretty useful when used consistently.
 
 The first thing to remember is that the `!` in ruby, at the end of a method name, such as `save!` does nothing special on it's own. It forms part of the method name and it's only purpose is to communicate something else about what that method might do.
 
@@ -46,7 +46,6 @@ Some good use cases for the bang:
 
 * Throwing an error on failure instead of returning nil.
 * Forcing a fetch to bypass cache and recalculate.
-* A method that hides a lot of complexity, or has performance implications.
 * Any other method that has may cause side effects that may not be expected.
 
 Bang can be a fantastic tool for letting other developers know to proceed with caution, so use it when it makes sense. When exploring code, take special care to look out for these methods and ensure they are being used correctly. They can often reveal bugs or performance issues if the danger has not been respected.
