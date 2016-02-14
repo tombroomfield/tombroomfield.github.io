@@ -48,4 +48,4 @@ Some good use cases for the bang:
 * Forcing a fetch to bypass cache and recalculate.
 * Any other method that has may cause side effects that may not be expected.
 
-Bang can be a fantastic tool for letting other developers know to proceed with caution, so use it when it makes sense. When exploring code, take special care to look out for these methods and ensure they are being used correctly. They can often reveal bugs or performance issues if the danger has not been respected.
+Bang can be a fantastic tool for letting other developers know to proceed with caution, so use it when it makes sense. When exploring code, take special care to look out for these methods and ensure they are being used correctly.
