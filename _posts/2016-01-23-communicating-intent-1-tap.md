@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Communicating Intent: #1 - Ruby's Tap."
+title: "Ruby's Tap."
 ---
 As software projects grow, being able to demonstrate your intention to other developers through clear and reasonable code is paramount. In this series I cover short tips to do just that.
 
