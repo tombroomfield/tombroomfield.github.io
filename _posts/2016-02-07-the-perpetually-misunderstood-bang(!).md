@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Communicating Intent: #2 - The perpetually misunderstood bang(!)"
+title: "The perpetually misunderstood bang(!)"
 ---
 
 As software projects grow, being able to demonstrate your intention to other developers through clear and reasonable code is paramount. In this series I cover short tips to do just that.
