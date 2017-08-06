@@ -16,16 +16,16 @@ This will filter the output of the lines to match your keyword.
 To return all routes related to a controller, simply add the name of the controller:
 {% highlight ruby linenos %}
 rake routes | grep users
-{ endhighlight }
+{% endhighlight %}
 
 To return all routes with a specific HTTP Verb, simply add GET, POST, PATCH:
 {% highlight ruby linenos %}
 rake routes | grep GET
-{ endhighlight }
+{% endhighlight %}
 
 To return all routes related to an action:
 {% highlight ruby linenos %}
 rake routes | grep update
-{ endhighlight }
+{% endhighlight %}
 
 Super simple, but I find it really useful.
