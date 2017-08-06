@@ -28,7 +28,7 @@ In the [Workflow](https://github.com/geekq/workflow) gem, you use `state!` to mo
 
 None of these methods have anything to do with modifying the object, so why are they using bang?
 
-Luckily Matz - the creator of Ruby - has something to say on the issue:
+Matz - the creator of Ruby - has something to say on the issue:
 
 > The bang (!) does not mean "destructive" nor lack of it mean non
 destructive either.  The bang sign means "the bang version is more
