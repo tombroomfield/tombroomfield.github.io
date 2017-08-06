@@ -3,8 +3,6 @@ layout: post
 title: "The perpetually misunderstood bang(!)"
 ---
 
-As software projects grow, being able to demonstrate your intention to other developers through clear and reasonable code is paramount. In this series I cover short tips to do just that.
-
 Today we cover the bang(!) symbol. In my opinion is one of the most common, yet misunderstood tactics for communicating intent to other developers. While subtle, it can actually be pretty useful when used consistently.
 
 The first thing to remember is that the `!` in ruby, at the end of a method name, such as `save!` does nothing special on it's own. It forms part of the method name and it's only purpose is to communicate something else about what that method might do.
